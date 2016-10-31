@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Library</string>
+    <string name="action_settings">Settings</string>
+    <string name="add">add</string>
+    <string name="year">Year: </string>
+    <string name="title">Title:</string>
+    <string name="directors">Director(s):</string>
+    <string name="actors">Actor(s):</string>
+    <string name="formats">Format(s):</string>
+    <string name="delete">delete</string>
+</resources>
