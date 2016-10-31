@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -7,71 +8,102 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <TableLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:divider="?android:attr/dividerHorizontal"
-            android:showDividers="middle">
-            <TableRow>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/title"
-                    style="@style/InfoSection"/>
-                <EditText
-                    android:layout_height="wrap_content"
-                    android:layout_width="0dp"
-                    android:singleLine="true"
-                    android:hint="Enter Here"
-                    android:textSize="20dp"/>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="@string/year"
-                    style="@style/InfoSection"/>
-                <Spinner
-                    android:id="@+id/addMovieYear"
-                    android:layout_height="match_parent"
-                    android:layout_width="wrap_content"
-                    android:dropDownWidth="wrap_content"
-                    style="@style/RightInfoSection">
-                </Spinner>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:background="#00ff00"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/directors"
-                    style="@style/InfoSectionList"/>
-                <LinearLayout
-                    android:id="@+id/addMovieDirectors"
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                </LinearLayout>
-            </TableRow>
-            <TableRow>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/actors"
-                    style="@style/InfoSectionList"/>
-                <LinearLayout
-                    android:id="@+id/addMovieActors"
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-                </LinearLayout>
-            </TableRow>
-        </TableLayout>
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:background="@color/lightGray"/>
+            <EditText
+                android:id="@+id/addMovieTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Movie Title"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Year"
+                android:background="@color/lightGray"/>
+            <Spinner
+                android:id="@+id/addMovieYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Director(s)"
+                android:background="@color/lightGray"/>
+            <EditText
+                android:id="@+id/addMovieDirectors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Director"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Actor(s)"
+                android:background="@color/lightGray"/>
+            <EditText
+                android:id="@+id/addMovieActors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Actor"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Genre(s)"
+                android:background="@color/lightGray"/>
+            <Spinner
+                android:id="@+id/addMovieGenres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Format(s)"
+                android:background="@color/lightGray"/>
+            <CheckBox
+                android:id="@+id/checkBox_dvd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DVD"/>
+            <CheckBox
+                android:id="@+id/checkbox_bluray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blu-Ray"/>
+            <CheckBox
+                android:id="@+id/checkbox_vhs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VHS"/>
+            <CheckBox
+                android:id="@+id/checkbox_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other"/>
+            <EditText
+                android:id="@+id/editText_otherGenre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:visibility="gone" />
+
+            <Button
+                android:id="@+id/button_submitMovie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"/>
+        </LinearLayout>
+
     </ScrollView>
 </LinearLayout>

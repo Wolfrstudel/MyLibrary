@@ -14,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -33,7 +32,7 @@ public class MovieDetailActivity extends AppCompatActivity implements AdapterVie
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_moviedetails);
         setSupportActionBar(toolbar);
 
-        //Get the selected movie from the movie list
+        //Get the selected movie from the list
         Intent intent = getIntent();
         movie = intent.getParcelableExtra("movie");
 
@@ -67,7 +66,12 @@ public class MovieDetailActivity extends AppCompatActivity implements AdapterVie
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        deleteOptionClicked();
+        switch (item.getItemId())
+        {
+            case R.id.option_deleteMovie:
+                deleteOptionClicked();
+                return true;
+        }
         return true;
     }
 

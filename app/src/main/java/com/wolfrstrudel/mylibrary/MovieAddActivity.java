@@ -10,12 +10,11 @@ import android.widget.Spinner;
 import android.widget.ViewSwitcher;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 
 public class MovieAddActivity extends AppCompatActivity
 {
-    Spinner yearSelector;
-    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -24,8 +23,9 @@ public class MovieAddActivity extends AppCompatActivity
         setContentView(R.layout.activity_movie_add);
 
         createYearSpinner();
-        createField((LinearLayout)findViewById(R.id.addMovieDirectors));
-        createField((LinearLayout)findViewById(R.id.addMovieActors));
+        createGenreSpinner();
+        //createField((LinearLayout)findViewById(R.id.addMovieDirectors));
+        //createField((LinearLayout)findViewById(R.id.addMovieActors));
     }
 
     private void createYearSpinner()
@@ -37,13 +37,20 @@ public class MovieAddActivity extends AppCompatActivity
         {
             years.add(i+"");
         }
-
-        adapter = new ArrayAdapter<>(this, R.layout.details, years);
-        adapter.setDropDownViewResource(R.layout.details);
-        yearSelector = (Spinner) findViewById(R.id.addMovieYear);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, years);
+        Spinner yearSelector = (Spinner) findViewById(R.id.addMovieYear);
         yearSelector.setAdapter(adapter);
     }
 
+    private void createGenreSpinner()
+    {
+        ArrayList<String> genres = new ArrayList<>(Arrays.asList("Action", "Adventure", "Comedy",
+                "Crime and Gangster", "Drama", "Epic/Historical", "Horror", "Musical/Dance",
+                "Science Fiction", "War", "Western"));
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, genres);
+        Spinner genreSelector = (Spinner) findViewById(R.id.addMovieGenres);
+        genreSelector.setAdapter(adapter);
+    }
     private void createField(final LinearLayout li)
     {
         final LinearLayout newView = (LinearLayout) this.getLayoutInflater().inflate(R.layout.field, null);
